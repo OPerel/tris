@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -11,8 +12,17 @@ module.exports = {
     contentBase: './dist',
     hot: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/template.html'
+    })
+  ],
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
       {
         test: /\.(jpg|png)$/,
         use: [
