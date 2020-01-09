@@ -1,0 +1,263 @@
+// Front Row Styles
+$frontRowColor: #101d62;
+
+// Second Row Styles
+$secondRowColor: #493d27;
+
+// Third Row Styles
+$thirdRowColor: #878393;
+
+$fourthRowColor: #5dafaf;
+
+// Parallax
+$perspective: 100px;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0; 
+}
+
+html {
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: $perspective;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+// .hero-parallax {
+//   width: 100vw;
+//   height: 100vh;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   perspective: $perspective;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+// }
+
+.row {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+
+  img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: -webkit-fill-available;
+  }
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  // width: 100vw;
+  // display: flex;
+}
+
+.about {
+  background-color: #408080;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 2;
+  border-top: solid white 1px;
+  // overflow-x: auto;
+  // overflow-y: hidden;
+}
+
+.projects {
+  background-color: #304141;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  border-left: solid white 1px;
+  // overflow-x: auto;
+  // overflow-y: auto;
+  // perspective: 100px;
+}
+
+// .contact {
+//   height: 100vh;
+//   width: 100vw;
+//   background-color: #72dac0;
+//   position: absolute;
+//   top: 200%;
+// }
+
+// 1 + (translateZ * -1) / perspective
+
+$rows: 5; // (actual num of rows + regular) - 2
+@for $i from 1 through $rows {
+  $x: ($rows - $i);
+  .row_#{$i} {
+    transform: translateZ(-$perspective * $x) scale($x + 1);
+  }
+}
+
+.row_0 {
+  background-attachment: fixed;
+}
+
+// CSS Triangles by Rows
+// Front Row
+#a {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 18vw 34vh 10vw;
+  border-color: transparent transparent $frontRowColor transparent;
+  margin-left: -4%;
+}
+
+#b {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 7vw 33vh 12vw;
+  border-color: transparent transparent $frontRowColor transparent;
+  margin-left: -15%;
+}
+
+#c {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 15vw 25vh 20vw;
+  border-color: transparent transparent $frontRowColor transparent;
+  margin-left: -10%;
+}
+
+#d {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 20vw 30vh 22vw;
+  border-color: transparent transparent $frontRowColor transparent;
+  margin-left: -12%;
+}
+
+// Second Row
+#e {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 8vw 60vh 17vw;
+  border-color: transparent transparent $secondRowColor transparent;
+  margin-left: -3%;
+}
+
+#f {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 12vw 70vh 5vw;
+  border-color: transparent transparent $secondRowColor transparent;
+  margin-left: -3%;
+}
+
+#g {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 10vw 55vh 8vw;
+  border-color: transparent transparent $secondRowColor transparent;
+  margin-left: -3%;
+}
+
+// Third Row
+#h {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 10vw 85vh 8vw;
+  border-color: transparent transparent $thirdRowColor transparent;
+  margin-left: -3%;
+}
+
+#i {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 12vw 76vh 9vw;
+  border-color: transparent transparent $thirdRowColor transparent;
+  margin-left: -5%;
+}
+
+#j {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 3vw 90vh 4vw;
+  border-color: transparent transparent $thirdRowColor transparent;
+  margin-left: -1%;
+}
+
+#k {
+  width: 10vw;
+  border-style: solid;
+  border-width: 1px 30vw 88vh 10vw;
+  border-color: transparent transparent $thirdRowColor transparent;
+  margin-left: -2%;
+}
+
+// Fourth Row
+#l {
+  border-style: solid;
+  border-width: 1px 10vw 85vh 8vw;
+  border-color: transparent transparent $fourthRowColor transparent;
+  margin-left: -3%;
+}
+
+#m {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 12vw 76vh 9vw;
+  border-color: transparent transparent $fourthRowColor transparent;
+  margin-left: -5%;
+}
+
+#n {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 3vw 90vh 4vw;
+  border-color: transparent transparent $fourthRowColor transparent;
+  margin-left: -1%;
+}
+
+#o {
+  // width: 10vw;
+  border-style: solid;
+  border-width: 1px 30vw 88vh 20vw;
+  border-color: transparent transparent $fourthRowColor transparent;
+  margin-left: -2%;
+}
