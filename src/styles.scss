@@ -86,61 +86,6 @@ section {
   // $height: calc(var(--scrollpos) * 0.7vh);
 // $scale: calc(1 - (var(--scrollpos) / 100));
 
-  .tris {
-    // height: $height;
-    
-    // transform: rotateZ($rotate) scale($scale); // translateZ(-4px);
-    // width: 10vw;
-    // margin: 25% auto;
-
-    position: absolute;
-    // top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 6;
-  }
-
-  .tri_0 {
-    border-style: solid;
-    border-top-width: 0vh;
-    border-right-width: 100vw;
-    border-bottom-width: calc(var(--scrollpos) * 0.7vh);
-    border-left-width: 0vw;
-    border-color: transparent transparent $color-complement-1 transparent;
-    transform-origin: bottom right;
-  }
-
-  .tri_1 {
-    border-style: solid;
-    border-top-width: 0vh;
-    border-right-width: 100vw;
-    border-bottom-width: calc(var(--scrollpos) * 0.5vh);
-    border-left-width: 0vw;
-    border-color: transparent transparent $color-complement-2 transparent;
-    transform-origin: bottom right;
-  }
-
-  .tri_2 {
-    border-style: solid;
-    border-top-width: 0vh;
-    border-right-width: 100vw;
-    border-bottom-width: calc(var(--scrollpos) * 0.3vh);
-    border-left-width: 0vw;
-    border-color: transparent transparent #266f6d transparent;
-    transform-origin: bottom right;
-  }
-
-  .tri_3 {
-    border-style: solid;
-    border-top-width: 0vh;
-    border-right-width: 100vw;
-    border-bottom-width: calc(var(--scrollpos) * 0.1vh);
-    border-left-width: 0vw;
-    border-color: transparent transparent $color-complement-0 transparent;
-    transform-origin: bottom right;
-  }
-
   // .top-right {
   //   background-color: $color-secondary-2-1;
   //   transform: rotate(calc(var(--scrollpos) * 1deg));
@@ -153,6 +98,56 @@ section {
   //   transform: rotate($rtl);
   //   // transform-origin: right;
   // }
+}
+
+.tris {
+  border-style: solid;
+  position: absolute;
+  // top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+}
+
+.tri_0 {
+  border-top-width: 0vh;
+  border-right-width: 100vw;
+  border-bottom-width: calc(var(--scrollpos) * 0.7vh);
+  border-left-width: 0vw;
+  border-color: transparent transparent $color-complement-1 transparent;
+}
+
+.tri_1 {
+  border-top-width: 0vh;
+  border-right-width: 100vw;
+  border-bottom-width: calc(var(--scrollpos) * 0.5vh);
+  border-left-width: 0vw;
+  border-color: transparent transparent $color-complement-2 transparent;
+}
+
+.tri_2 {
+  border-top-width: 0vh;
+  border-right-width: 100vw;
+  border-bottom-width: calc(var(--scrollpos) * 0.3vh);
+  border-left-width: 0vw;
+  border-color: transparent transparent #266f6d transparent;
+}
+
+.tri_3 {
+  border-top-width: 0vh;
+  border-right-width: 100vw;
+  border-bottom-width: calc(var(--scrollpos) * 0.1vh);
+  border-left-width: 0vw;
+  border-color: transparent transparent $color-complement-0 transparent;
+}
+
+.tri_4 {
+  border-top-width: 0vh;
+  border-right-width: 0vw;
+  border-bottom-width: calc(var(--scrollpos) * 1vh);
+  border-left-width: 100vw;
+  border-color: transparent transparent $color-complement-2 transparent;
 }
 
 // nav {
