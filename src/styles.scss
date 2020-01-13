@@ -103,13 +103,6 @@ section {
   bottom: 0;
   left: 0;
   // transform: translateY(calc(var(--scrollpos) * 1));
-  img {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
-    height: -webkit-fill-available;
-  }
 }
 
 .about {
@@ -262,69 +255,4 @@ $scale: calc(1 - (var(--scrollpos) / 100));
 //   border-style: solid;
 //   border-width: 0 100vw 30vh 0;
 //   border-color: transparent transparent $color-complement-0 transparent;
-// }
-
-// // Third Row
-// #h {
-//   width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 10vw 85vh 8vw;
-//   border-color: transparent transparent $thirdRowColor transparent;
-//   margin-left: -3%;
-// }
-
-// #i {
-//   width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 12vw 76vh 9vw;
-//   border-color: transparent transparent $thirdRowColor transparent;
-//   margin-left: -5%;
-// }
-
-// #j {
-//   width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 3vw 90vh 4vw;
-//   border-color: transparent transparent $thirdRowColor transparent;
-//   margin-left: -1%;
-// }
-
-// #k {
-//   width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 30vw 88vh 10vw;
-//   border-color: transparent transparent $thirdRowColor transparent;
-//   margin-left: -2%;
-// }
-
-// // Fourth Row
-// #l {
-//   border-style: solid;
-//   border-width: 1px 10vw 85vh 8vw;
-//   border-color: transparent transparent $fourthRowColor transparent;
-//   margin-left: -3%;
-// }
-
-// #m {
-//   // width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 12vw 76vh 9vw;
-//   border-color: transparent transparent $fourthRowColor transparent;
-//   margin-left: -5%;
-// }
-
-// #n {
-//   // width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 3vw 90vh 4vw;
-//   border-color: transparent transparent $fourthRowColor transparent;
-//   margin-left: -1%;
-// }
-
-// #o {
-//   // width: 10vw;
-//   border-style: solid;
-//   border-width: 1px 30vw 88vh 20vw;
-//   border-color: transparent transparent $fourthRowColor transparent;
-//   margin-left: -2%;
 // }
