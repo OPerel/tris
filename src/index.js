@@ -1,5 +1,7 @@
 import './styles.scss';
 
+import './assets/bg.jpg'
+
 
 // const tris = document.getElementsByClassName('tris')[0];
 // const square = document.getElementsByClassName('square')[0];
@@ -40,7 +42,7 @@ const debounce = (fn) => {
 const storeScroll = () => {
   // const containerHeight = container.clientHeight * 4;
   // console.log(window.scrollY, document.body.clientHeight, window.innerHeight)
-  let scrollpos = `${Math.floor(window.scrollY / (document.body.clientHeight - window.innerHeight) * 350)}`;
+  let scrollpos = `${Math.floor(window.scrollY / (document.body.clientHeight - window.innerHeight) * 200)}`;
   document.documentElement.setAttribute('style', `--scrollpos: ${scrollpos}`);
 }
 
@@ -60,10 +62,11 @@ gallery.addEventListener('wheel', (e) => {
   }
 })
 
-// for (let i = 0; 0 < 4; i++) {
-//   const tri = document.createElement('div');
-//   tri.classList.add('tris', `tris_${i}`)
-//   container.appendChild(tri);
+// const hero = document.getElementsByClassName('hero')[0];
+// for (let i = 0; i < 25; i++) {
+//   const hr = document.createElement('hr');
+//   hr.classList.add(i % 2 === 0 ? 'top-right' : 'top-left');
+//   hero.appendChild(hr);
 // }
 
 

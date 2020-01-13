@@ -48,10 +48,6 @@ body {
 
 section {
   text-align: center;
-  // position: absolute;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -60,16 +56,103 @@ section {
 }
 
 .container {
-  width: 100vw;
-  // height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  // perspective: $perspective;
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero {
+  height: 120vh;
+  display: grid;
+  place-content: center;
+  // background-color: $color-complement-2;
+  background-image: url('./assets/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+
+  h1 {
+    font-size: 4rem;
+    color: $color-secondary-1-1;
+    z-index: 6;
+    transform: translateY(calc(var(--scrollpos) * 5px));
+  }
+
+  hr {
+    height: 5vh;
+    width: 100vw;
+    margin: 0;
+    border: none;
+  }
+
+  // $height: calc(var(--scrollpos) * 0.7vh);
+// $scale: calc(1 - (var(--scrollpos) / 100));
+
+  .tris {
+    // height: $height;
+    
+    // transform: rotateZ($rotate) scale($scale); // translateZ(-4px);
+    // width: 10vw;
+    // margin: 25% auto;
+
+    position: absolute;
+    // top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+  }
+
+  .tri_0 {
+    border-style: solid;
+    border-top-width: 0vh;
+    border-right-width: 100vw;
+    border-bottom-width: calc(var(--scrollpos) * 0.7vh);
+    border-left-width: 0vw;
+    border-color: transparent transparent $color-complement-1 transparent;
+    transform-origin: bottom right;
+  }
+
+  .tri_1 {
+    border-style: solid;
+    border-top-width: 0vh;
+    border-right-width: 100vw;
+    border-bottom-width: calc(var(--scrollpos) * 0.5vh);
+    border-left-width: 0vw;
+    border-color: transparent transparent $color-complement-2 transparent;
+    transform-origin: bottom right;
+  }
+
+  .tri_2 {
+    border-style: solid;
+    border-top-width: 0vh;
+    border-right-width: 100vw;
+    border-bottom-width: calc(var(--scrollpos) * 0.3vh);
+    border-left-width: 0vw;
+    border-color: transparent transparent #266f6d transparent;
+    transform-origin: bottom right;
+  }
+
+  .tri_3 {
+    border-style: solid;
+    border-top-width: 0vh;
+    border-right-width: 100vw;
+    border-bottom-width: calc(var(--scrollpos) * 0.1vh);
+    border-left-width: 0vw;
+    border-color: transparent transparent $color-complement-0 transparent;
+    transform-origin: bottom right;
+  }
+
+  // .top-right {
+  //   background-color: $color-secondary-2-1;
+  //   transform: rotate(calc(var(--scrollpos) * 1deg));
+  //   // transform-origin: left;
+  // }
+
+  // $rtl: calc(var(--scrollpos) * -1deg);
+  // .top-left {
+  //   background-color: $color-secondary-2-2;
+  //   transform: rotate($rtl);
+  //   // transform-origin: right;
+  // }
 }
 
 // nav {
@@ -95,45 +178,20 @@ section {
 //   cursor: pointer;
 // }
 
-.row {
-  width: 100vw;
-  position: absolute;
-  // top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  // transform: translateY(calc(var(--scrollpos) * 1));
-}
+// .row {
+//   width: 100vw;
+//   position: absolute;
+//   // top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   // transform: translateY(calc(var(--scrollpos) * 1));
+// }
 
 .about {
   background-color: $color-complement-0;
   // border-top: solid white 1px;
 }
-
-$rotate: calc(var(--scrollpos) * 1deg);
-$scale: calc(1 - (var(--scrollpos) / 100));
-
-.tris {
-  height: 20vh;
-  border-style: solid;
-  border-top-width: 0vh;
-  border-right-width: 100vw;
-  border-bottom-width: 35vh;
-  border-left-width: 0vw;
-  border-color: transparent transparent $color-primary-2 transparent;
-  transform-origin: bottom right;
-  transform: rotateZ($rotate) scale($scale); // translateZ(-4px);
-  // width: 10vw;
-  // margin: 25% auto;
-
-  position: absolute;
-  // top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 3;
-}
-
 
 .projects {
   background-color: #304141;
@@ -150,8 +208,8 @@ $scale: calc(1 - (var(--scrollpos) / 100));
     width: 100vw;
     padding: 0 2%;
     background-color: $color-complement-1;
-    transform: translateY(calc(var(--scrollpos) * -2.5px));
-    opacity: calc((var(--scrollpos) - 193) / 40);
+    transform: translateY(calc(var(--scrollpos) * -4.5px));
+    opacity: 1; //calc((var(--scrollpos) - 193) / 40);
     overflow-y: hidden;
     overflow-x: hidden;
 
@@ -165,7 +223,7 @@ $scale: calc(1 - (var(--scrollpos) / 100));
       margin: 0 2%;
       background-color: $color-primary-1;
       flex: 0 0 auto;
-      opacity: calc((var(--scrollpos) - 193) / 40);
+      // opacity: calc((var(--scrollpos) - 193) / 40);
     }
   }
 }
