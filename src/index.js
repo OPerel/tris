@@ -2,12 +2,13 @@ import './styles.scss';
 
 import './assets/bg.jpg'
 
+const scrollToElement = require('scroll-to-element');
 
 // const tris = document.getElementsByClassName('tris')[0];
 // const square = document.getElementsByClassName('square')[0];
 const gallery = document.getElementsByClassName('gallery')[0];
 // const navItems = document.querySelectorAll('li');
-const container = document.getElementsByClassName('container')[0];
+// const container = document.getElementsByClassName('container')[0];
 // const about = document.getElementById('about');
 // const projects = document.getElementById('projects');
 // const contact = document.getElementById('contact');
@@ -62,12 +63,20 @@ gallery.addEventListener('wheel', (e) => {
   }
 })
 
-// const hero = document.getElementsByClassName('hero')[0];
-// for (let i = 0; i < 25; i++) {
-//   const hr = document.createElement('hr');
-//   hr.classList.add(i % 2 === 0 ? 'top-right' : 'top-left');
-//   hero.appendChild(hr);
-// }
+const clickMenuItems = (item) => {
+  console.log('Go to: ', item);
+  scrollToElement(`#${item}`, {
+    align: 'top',
+    duration: 2000,
+    ease: 'outCube'
+  });
+}
+
+const menuListItems = document.querySelectorAll('li');
+menuListItems.forEach(item => {
+  item.addEventListener('click', () => clickMenuItems(item.innerText));
+})
+
 
 
     

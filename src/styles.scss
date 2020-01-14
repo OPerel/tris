@@ -52,7 +52,7 @@ section {
   width: 100vw;
   overflow: hidden;
   position: relative;
-  z-index: 5;
+  // z-index: 5;
 }
 
 .container {
@@ -69,6 +69,9 @@ section {
   background-size: cover;
   background-attachment: fixed;
 
+  background-blend-mode: overlay;
+  background-color: #113433eb;
+
   h1 {
     font-size: 4rem;
     color: $color-secondary-1-1;
@@ -82,22 +85,6 @@ section {
     margin: 0;
     border: none;
   }
-
-  // $height: calc(var(--scrollpos) * 0.7vh);
-// $scale: calc(1 - (var(--scrollpos) / 100));
-
-  // .top-right {
-  //   background-color: $color-secondary-2-1;
-  //   transform: rotate(calc(var(--scrollpos) * 1deg));
-  //   // transform-origin: left;
-  // }
-
-  // $rtl: calc(var(--scrollpos) * -1deg);
-  // .top-left {
-  //   background-color: $color-secondary-2-2;
-  //   transform: rotate($rtl);
-  //   // transform-origin: right;
-  // }
 }
 
 .tris {
@@ -150,38 +137,39 @@ section {
   border-color: transparent transparent $color-complement-2 transparent;
 }
 
-// nav {
-//   position: fixed;
-//   top: 0;
-//   z-index: 99;
-//   width: 100vw;
-//   background-color: black;
-// }
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  background-color: black;
 
-// nav ul {
-//   display: flex;
-//   justify-content: space-evenly;
-//   list-style: none;
-// }
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0.5%;
 
-// nav ul li {
-//   color: #608D8B;
-// }
+    li {
+      padding: 10px 20px;
+      color: $color-complement-1;
+    }
 
-// nav ul li:hover {
-//   text-decoration: underline;
-//   cursor: pointer;
-// }
+    li:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      background-color: #333;
+    }
+  }
 
-// .row {
-//   width: 100vw;
-//   position: absolute;
-//   // top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   // transform: translateY(calc(var(--scrollpos) * 1));
-// }
+  // .tri_nav {
+  //   border-top-width: 0vh;
+  //   border-right-width: 100vw;
+  //   border-bottom-width: calc(var(--scrollpos) * 0.3vh);
+  //   border-left-width: 0vw;
+  //   border-color: transparent transparent b#000000 transparent;
+  // }
+}
 
 .about {
   background-color: $color-complement-0;
