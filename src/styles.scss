@@ -44,10 +44,64 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+
+  color: $color-secondary-2-4;
+  font-family: 'Londrina Solid', cursive;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100vw;
+  background-color: black;
+
+  ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0.5%;
+
+    li {
+      padding: 10px 20px;
+      color: $color-complement-1;
+      font-family: 'Share';
+      font-size: 1.15rem;
+    }
+
+    li:hover {
+      text-decoration: underline;
+      cursor: pointer;
+      background-color: #333;
+    }
+  }
+
+  // .tri_nav {
+  //   border-top-width: 0vh;
+  //   border-right-width: 100vw;
+  //   border-bottom-width: calc(var(--scrollpos) * 0.3vh);
+  //   border-left-width: 0vw;
+  //   border-color: transparent transparent b#000000 transparent;
+  // }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+p {
+  font-size: 1.5rem;
 }
 
 section {
-  text-align: center;
+  display: grid;
+  align-content: center;
+  // text-align: center;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -60,11 +114,13 @@ section {
   overflow: hidden;
 }
 
+.content-wrapper {
+  width: 80%;
+  margin: 0% auto;
+}
+
 .hero {
   height: 120vh;
-  display: grid;
-  place-content: center;
-  // background-color: $color-complement-2;
   background-image: url('./assets/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
@@ -72,18 +128,19 @@ section {
   background-blend-mode: overlay;
   background-color: #113433eb;
 
+  color: $color-primary-1;
+    
   h1 {
-    font-size: 4rem;
-    color: $color-secondary-1-1;
+    margin: 1% 0;
+    font-size: 5rem;
     z-index: 6;
     transform: translateY(calc(var(--scrollpos) * 5px));
   }
 
-  hr {
-    height: 5vh;
-    width: 100vw;
+  h3 {
     margin: 0;
-    border: none;
+    font-weight: lighter;
+    transform: translateY(calc(var(--scrollpos) * 2.5px));
   }
 }
 
@@ -137,40 +194,6 @@ section {
   border-color: transparent transparent $color-complement-2 transparent;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  z-index: 99;
-  width: 100vw;
-  background-color: black;
-
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    margin: 0.5%;
-
-    li {
-      padding: 10px 20px;
-      color: $color-complement-1;
-    }
-
-    li:hover {
-      text-decoration: underline;
-      cursor: pointer;
-      background-color: #333;
-    }
-  }
-
-  // .tri_nav {
-  //   border-top-width: 0vh;
-  //   border-right-width: 100vw;
-  //   border-bottom-width: calc(var(--scrollpos) * 0.3vh);
-  //   border-left-width: 0vw;
-  //   border-color: transparent transparent b#000000 transparent;
-  // }
-}
-
 .about {
   background-color: $color-complement-0;
   // border-top: solid white 1px;
@@ -181,18 +204,13 @@ nav {
   // border: solid white 1px;
 
   .gallery {
-    position: absolute;
-    top: 120%;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
     height: 40vh;
     width: 100vw;
     padding: 0 2%;
+    margin-bottom: 0;
     background-color: $color-complement-1;
-    transform: translateY(calc(var(--scrollpos) * -4.5px));
-    opacity: 1; //calc((var(--scrollpos) - 193) / 40);
+    transform: translateY(calc(var(--scrollpos) * -5.5px + 750px));
+    opacity: calc((var(--scrollpos) - 120) / 25); // maybe use regular animation istead of scrolling for this.
     overflow-y: hidden;
     overflow-x: hidden;
 
