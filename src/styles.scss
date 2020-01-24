@@ -28,11 +28,8 @@ $color-complement-2: #3E7A78;
 $color-complement-3: #0D5452;
 $color-complement-4: #00413F;
 
-// Parallax
-$perspective: 100px;
-
 :root {
-  --scrollpos: 0vh;
+  --scrollpos: 0;
 }
 
 * {
@@ -45,13 +42,14 @@ body {
   padding: 0;
   overflow-x: hidden;
 
-  color: $color-secondary-2-4;
+  color: #aed6d4;
   font-family: 'Londrina Solid', cursive;
 }
 
 nav {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 99;
   width: 100vw;
   background-color: black;
@@ -60,10 +58,10 @@ nav {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-    margin: 0.5%;
+    margin: 0 0.5%;
 
     li {
-      padding: 10px 20px;
+      padding: 12px 20px;
       color: $color-complement-1;
       font-family: 'Share';
       font-size: 1.15rem;
@@ -73,6 +71,7 @@ nav {
       text-decoration: underline;
       cursor: pointer;
       background-color: #333;
+      color: $color-primary-1;
     }
   }
 
@@ -86,7 +85,8 @@ nav {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
+  font-family: 'Londrina Solid', cursive;
+  // font-weight: 100;
   font-size: 2rem;
 }
 
@@ -117,6 +117,7 @@ section {
 .content-wrapper {
   width: 80%;
   margin: 0% auto;
+  z-index: 2;
 }
 
 .hero {
@@ -151,7 +152,7 @@ section {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 6;
+  z-index: 3;
 }
 
 .tri_0 {
@@ -173,7 +174,7 @@ section {
 .tri_2 {
   border-top-width: 0vh;
   border-right-width: 100vw;
-  border-bottom-width: calc(var(--scrollpos) * 0.3vh);
+  border-bottom-width: calc(var(--scrollpos) * 0.30vh);
   border-left-width: 0vw;
   border-color: transparent transparent #266f6d transparent;
 }
@@ -181,22 +182,26 @@ section {
 .tri_3 {
   border-top-width: 0vh;
   border-right-width: 100vw;
-  border-bottom-width: calc(var(--scrollpos) * 0.1vh);
+  border-bottom-width: calc(var(--scrollpos) * 0.15vh);
   border-left-width: 0vw;
   border-color: transparent transparent $color-complement-0 transparent;
 }
 
-.tri_4 {
-  border-top-width: 0vh;
-  border-right-width: 0vw;
-  border-bottom-width: calc(var(--scrollpos) * 1vh);
-  border-left-width: 100vw;
-  border-color: transparent transparent $color-complement-2 transparent;
-}
-
 .about {
   background-color: $color-complement-0;
-  // border-top: solid white 1px;
+
+  h2 {
+    transform: translateY(calc(var(--scrollpos) * -10px + 765px));
+  }
+
+  .tri_about {
+    border-top-width: 0vh;
+    border-right-width: 0vw;
+    border-bottom-width: calc(var(--scrollpos) * 1vh);
+    border-left-width: 100vw;
+    border-color: transparent transparent $color-complement-2 transparent;
+    z-index: 1;
+  }
 }
 
 .projects {
@@ -208,7 +213,7 @@ section {
     width: 100vw;
     padding: 0 2%;
     margin-bottom: 0;
-    background-color: $color-complement-1;
+    // background-color: $color-complement-1;
     transform: translateY(calc(var(--scrollpos) * -5.5px + 750px));
     opacity: calc((var(--scrollpos) - 120) / 25); // maybe use regular animation istead of scrolling for this.
     overflow-y: hidden;
@@ -219,19 +224,42 @@ section {
     align-items: center;
 
     .square {
-      width: 20vw;
-      height: 70px;
+      width: 400px;
+      height: 300px;
       margin: 0 2%;
-      background-color: $color-primary-1;
+      background-color: $color-secondary-1-1;
       flex: 0 0 auto;
       // opacity: calc((var(--scrollpos) - 193) / 40);
     }
   }
 }
 
-.contact {
-  background-color: #72dac0;
+.skills {
+  background-color: $color-complement-3;
+  // margin-bottom: 50vh;
+
+  .tri_skills {
+    border-top-width: 0vh;
+    border-right-width: 100vw;
+    border-bottom-width: 100vh;
+    border-left-width: 0vw;
+    border-color: transparent transparent #023a38 transparent;
+    z-index: 1;
+
+    transform: rotateZ(calc(var(--scrollpos) * 1.8deg)) scale(calc((var(--scrollpos) - 100) / 100));
+    transform-origin: top left;
+    opacity: calc((var(--scrollpos) - 100) / 100);
+  }
 }
+
+// .footer {
+//   position: fixed;
+//   bottom: 0;
+//   height: 50vh;
+//   // width: 100vh;
+//   background-color: #023a38;
+//   z-index: -1;
+// }
 
 // 1 + (translateZ * -1) / perspective
 

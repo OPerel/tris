@@ -2,7 +2,7 @@ import './styles.scss';
 
 import './assets/bg.jpg'
 
-const scrollToElement = require('scroll-to-element');
+import { scrollIntoView } from 'scroll-js';
 
 // const tris = document.getElementsByClassName('tris')[0];
 // const square = document.getElementsByClassName('square')[0];
@@ -23,13 +23,13 @@ const debounce = (fn) => {
   return (...params) => {
     
     // If the frame variable has been defined, clear it now, and queue for next frame
-    if (frame) { 
+    if (frame) {
       cancelAnimationFrame(frame);
     }
 
     // Queue our function call for the next frame
     frame = requestAnimationFrame(() => {
-      
+
       // Call our function and pass any params we received
       fn(...params);
     });
@@ -41,9 +41,7 @@ const debounce = (fn) => {
 // Reads out the scroll position and stores it in the data attribute
 // so we can use it in our stylesheets
 const storeScroll = () => {
-  // const containerHeight = container.clientHeight * 4;
-  // console.log(window.scrollY, document.body.clientHeight, window.innerHeight)
-  let scrollpos = `${Math.floor(window.scrollY / (document.body.clientHeight - window.innerHeight) * 200)}`;
+  let scrollpos = `${(window.scrollY / (document.body.clientHeight - window.innerHeight) * 200)}`;
   document.documentElement.setAttribute('style', `--scrollpos: ${scrollpos}`);
 }
 
@@ -64,17 +62,15 @@ gallery.addEventListener('wheel', (e) => {
 })
 
 const clickMenuItems = (item) => {
-  console.log('Go to: ', item);
-  scrollToElement(`#${item}`, {
-    align: 'top',
-    duration: 2000,
-    ease: 'outCube'
-  });
+  console.log('Go to: ', item.innerText);
+  const mySection = document.getElementById(`${item.innerText}`);
+  scrollIntoView(mySection, document.body, { easing: 'linear', duration: 1200 })
+  // mySection.scrollIntoView({block: 'start', behavior: 'smooth'});
 }
 
 const menuListItems = document.querySelectorAll('li');
 menuListItems.forEach(item => {
-  item.addEventListener('click', () => clickMenuItems(item.innerText));
+  item.addEventListener('click', () => clickMenuItems(item));
 })
 
 
