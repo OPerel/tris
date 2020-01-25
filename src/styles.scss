@@ -155,12 +155,16 @@ section {
   z-index: 3;
 }
 
+// $t: rgb(34, 103, 101); //$color-complement-0
+// $tricolor: rgb(calc(var(--scrollpos)), 103, 101);
+
 .tri_0 {
   border-top-width: 0vh;
   border-right-width: 100vw;
   border-bottom-width: calc(var(--scrollpos) * 0.7vh);
   border-left-width: 0vw;
   border-color: transparent transparent $color-complement-1 transparent;
+  opacity: calc(var(--scrollpos) / 50)
 }
 
 .tri_1 {
@@ -169,6 +173,7 @@ section {
   border-bottom-width: calc(var(--scrollpos) * 0.5vh);
   border-left-width: 0vw;
   border-color: transparent transparent $color-complement-2 transparent;
+  opacity: calc(var(--scrollpos) / 50)
 }
 
 .tri_2 {
@@ -177,6 +182,7 @@ section {
   border-bottom-width: calc(var(--scrollpos) * 0.30vh);
   border-left-width: 0vw;
   border-color: transparent transparent #266f6d transparent;
+  opacity: calc(var(--scrollpos) / 50)
 }
 
 .tri_3 {
@@ -185,6 +191,7 @@ section {
   border-bottom-width: calc(var(--scrollpos) * 0.15vh);
   border-left-width: 0vw;
   border-color: transparent transparent $color-complement-0 transparent;
+  opacity: calc(var(--scrollpos) / 50)
 }
 
 .about {
@@ -205,13 +212,13 @@ section {
 }
 
 .projects {
-  background-color: #304141;
+  background-color: #151e1e;
   // border: solid white 1px;
 
   .gallery {
-    height: 40vh;
+    height: 60vh;
     width: 100vw;
-    padding: 0 2%;
+    padding: 4% 0;
     margin-bottom: 0;
     // background-color: $color-complement-1;
     transform: translateY(calc(var(--scrollpos) * -5.5px + 750px));
@@ -222,14 +229,19 @@ section {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-
+    
     .square {
-      width: 400px;
-      height: 300px;
-      margin: 0 2%;
-      background-color: $color-secondary-1-1;
+      width: 42vw;
+      height: 100%;
+      margin: 0 3.5vh;
+      background-color: $color-complement-1;
       flex: 0 0 auto;
+      border-radius: 5px;
       // opacity: calc((var(--scrollpos) - 193) / 40);
+
+      @media only screen and (min-width: 1100px) {
+        width: 29vw;
+      }
     }
   }
 }

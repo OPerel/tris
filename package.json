@@ -26,7 +26,6 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "scroll-js": "^3.1.1",
-    "scroll-to-element": "^2.0.3"
+    "scroll-js": "^3.1.1"
   }
 }
