@@ -43,6 +43,7 @@ const debounce = (fn) => {
 const storeScroll = () => {
   let scrollpos = `${(window.scrollY / (document.body.clientHeight - window.innerHeight) * 200)}`;
   document.documentElement.setAttribute('style', `--scrollpos: ${scrollpos}`);
+  document.documentElement.dataset.scroll = scrollpos;
 }
 
 // Listen for new scroll events, here we debounce our `storeScroll` function
@@ -51,15 +52,15 @@ document.addEventListener('scroll', debounce(storeScroll), { passive: true });
 // Update scroll position for first time
 storeScroll();
 
-gallery.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  if (e.deltaY > 0) {
-    gallery.scrollLeft += 100;
-  }
-  else {
-    gallery.scrollLeft -= 100;
-  }
-})
+// gallery.addEventListener('wheel', (e) => {
+//   e.preventDefault();
+//   if (e.deltaY > 0) {
+//     gallery.scrollLeft += 100;
+//   }
+//   else {
+//     gallery.scrollLeft -= 100;
+//   }
+// })
 
 const clickMenuItems = (item) => {
   console.log('Go to: ', item.innerText);

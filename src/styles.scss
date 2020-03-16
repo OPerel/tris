@@ -28,9 +28,9 @@ $color-complement-2: #3E7A78;
 $color-complement-3: #0D5452;
 $color-complement-4: #00413F;
 
-:root {
-  --scrollpos: 0;
-}
+// :root {
+//   --scrollpos: 0;
+// }
 
 * {
   box-sizing: border-box;
@@ -44,6 +44,10 @@ body {
 
   color: #aed6d4;
   font-family: 'Londrina Solid', cursive;
+
+  // transform: translate3d(0,0,0);
+  // -moz-transform: translate3d(0,0,0);
+  // -webkit-transform: translate3d(0,0,0);
 }
 
 nav {
@@ -216,33 +220,44 @@ section {
   // border: solid white 1px;
 
   .gallery {
-    height: 60vh;
+    height: 65vh;
     width: 100vw;
     padding: 4% 0;
     margin-bottom: 0;
     // background-color: $color-complement-1;
     transform: translateY(calc(var(--scrollpos) * -5.5px + 750px));
     opacity: calc((var(--scrollpos) - 120) / 25); // maybe use regular animation istead of scrolling for this.
-    overflow-y: hidden;
-    overflow-x: hidden;
+    // overflow-y: hidden;
+    // overflow-x: hidden;
 
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
+    // display: flex;
+    // flex-wrap: nowrap;
+    // align-items: center;
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(50% - 40px * 2);
     
     .square {
-      width: 42vw;
-      height: 100%;
-      margin: 0 3.5vh;
+      // width: 42vw;
+      // height: 100%;
+      // margin: 0 3.5vh;
       background-color: $color-complement-1;
-      flex: 0 0 auto;
+      // flex: 0 0 auto;
       border-radius: 5px;
       // opacity: calc((var(--scrollpos) - 193) / 40);
 
-      @media only screen and (min-width: 1100px) {
-        width: 29vw;
-      }
+      // @media only screen and (min-width: 1100px) {
+      //   width: 29vw;
+      // }
     }
+  }
+  .gallery:before,
+  .gallery:after {
+    content: '';
+    width: 10px;
   }
 }
 
