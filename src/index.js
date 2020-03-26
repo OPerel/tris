@@ -13,54 +13,53 @@ const gallery = document.getElementsByClassName('gallery')[0];
 // const projects = document.getElementById('projects');
 // const contact = document.getElementById('contact');
 
-// The debounce function receives our function as a parameter
-const debounce = (fn) => {
-  console.log('debounce is running')
-  // This holds the requestAnimationFrame reference, so we can cancel it if we wish
-  let frame;
 
-  // The debounce function returns a new function that can receive a variable number of arguments
-  return (...params) => {
-    
-    // If the frame variable has been defined, clear it now, and queue for next frame
-    if (frame) {
-      cancelAnimationFrame(frame);
-    }
+/************ set global scrollpos **************/
 
-    // Queue our function call for the next frame
-    frame = requestAnimationFrame(() => {
+let lastScrollY = 0, ticking = false;
 
-      // Call our function and pass any params we received
-      fn(...params);
-    });
-
-  } 
-};
-
-
-// Reads out the scroll position and stores it in the data attribute
-// so we can use it in our stylesheets
-const storeScroll = () => {
-  let scrollpos = `${(window.scrollY / (document.body.clientHeight - window.innerHeight) * 200)}`;
-  document.documentElement.setAttribute('style', `--scrollpos: ${scrollpos}`);
-  document.documentElement.dataset.scroll = scrollpos;
+const onScroll = () => {
+  // console.log('onScroll is running');
+  const body = document.getElementsByTagName('body')[0];
+  lastScrollY = window.scrollY;
+  requestTick();
 }
 
+const requestTick = () => {
+  // console.log('requestTick is running');
+  if(!ticking) {
+    requestAnimationFrame(animate);
+  }
+  ticking = true;
+}
+
+const animate = () => {
+  // console.log('animate is running');
+
+  // reset the tick so we can capture the next onScroll
+  ticking = false;
+
+  let scrollpos;
+
+  // const main = document.getElementsByTagName('main')[0];
+  scrollpos = (lastScrollY / (document.body.clientHeight - window.innerHeight)) * 200;
+  setScrollPos(scrollpos);
+}
+
+const setScrollPos = (scrollPos) => {
+  // console.log('setScrollPos: ', scrollPos)
+  document.documentElement.setAttribute('style', `--scrollpos: ${scrollPos}`);
+}
+
+/************ end setting global scrollpos *************/
+
 // Listen for new scroll events, here we debounce our `storeScroll` function
-document.addEventListener('scroll', debounce(storeScroll), { passive: true });
+document.addEventListener('scroll', onScroll, { passive: false });
 
-// Update scroll position for first time
-storeScroll();
-
-// gallery.addEventListener('wheel', (e) => {
+// document.addEventListener('wheel', (e) => {
+//   console.log('mousewheel')
 //   e.preventDefault();
-//   if (e.deltaY > 0) {
-//     gallery.scrollLeft += 100;
-//   }
-//   else {
-//     gallery.scrollLeft -= 100;
-//   }
-// })
+// }, {passive: false});
 
 const clickMenuItems = (item) => {
   console.log('Go to: ', item.innerText);

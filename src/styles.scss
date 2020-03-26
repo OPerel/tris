@@ -41,8 +41,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-
-  color: #aed6d4;
+  // overflow-y: hidden;
+  color: #AED6D4;
   font-family: 'Londrina Solid', cursive;
 
   // transform: translate3d(0,0,0);
@@ -132,7 +132,7 @@ section {
 
   background-blend-mode: overlay;
   background-color: #113433eb;
-
+  
   color: $color-primary-1;
     
   h1 {
@@ -208,7 +208,7 @@ section {
   .tri_about {
     border-top-width: 0vh;
     border-right-width: 0vw;
-    border-bottom-width: calc(var(--scrollpos) * 1vh);
+    border-bottom-width: calc(var(--scrollpos) * 0.8vh);
     border-left-width: 100vw;
     border-color: transparent transparent $color-complement-2 transparent;
     z-index: 1;
