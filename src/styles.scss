@@ -45,6 +45,7 @@ body {
   color: #AED6D4;
   font-family: 'Londrina Solid', cursive;
 
+  margin-bottom: 37vh;
   // transform: translate3d(0,0,0);
   // -moz-transform: translate3d(0,0,0);
   // -webkit-transform: translate3d(0,0,0);
@@ -159,9 +160,6 @@ section {
   z-index: 3;
 }
 
-// $t: rgb(34, 103, 101); //$color-complement-0
-// $tricolor: rgb(calc(var(--scrollpos)), 103, 101);
-
 .tri_0 {
   border-top-width: 0vh;
   border-right-width: 100vw;
@@ -263,7 +261,7 @@ section {
 
 .skills {
   background-color: $color-complement-3;
-  // margin-bottom: 50vh;
+  // box-shadow: inset 15px 0px 6px 5px #aaa;
 
   .tri_skills {
     border-top-width: 0vh;
@@ -279,14 +277,21 @@ section {
   }
 }
 
-// .footer {
-//   position: fixed;
-//   bottom: 0;
-//   height: 50vh;
-//   // width: 100vh;
-//   background-color: #023a38;
-//   z-index: -1;
-// }
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+
+  display: grid;
+  align-content: center;
+  width: 100vw;
+  height: 75vh;
+  background-color: #2d6753
+}
+
+
+/******************************************************/
+/***************** unused animations ******************/
 
 // 1 + (translateZ * -1) / perspective
 

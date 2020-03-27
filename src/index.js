@@ -62,9 +62,9 @@ document.addEventListener('scroll', onScroll, { passive: false });
 // }, {passive: false});
 
 const clickMenuItems = (item) => {
-  console.log('Go to: ', item.innerText);
+  // console.log('Go to: ', item.innerText);
   const mySection = document.getElementById(`${item.innerText}`);
-  scrollIntoView(mySection, document.body, { easing: 'linear', duration: 1200 })
+  scrollIntoView(mySection, document.body, { easing: 'ease-out', duration: 1200 });
   // mySection.scrollIntoView({block: 'start', behavior: 'smooth'});
 }
 
