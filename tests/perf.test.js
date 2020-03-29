@@ -23,15 +23,7 @@ describe('test', () => {
     }
   });
 
-  // test('should open the browser in the url and see welcome', async () => {
-  //   await page.waitForSelector('h1');
-  //   const h = await page.$('h1');
-  //   const text = await page.evaluate(h => h.textContent, h);
-  //   expect(text).toEqual('Welcome!');
-  // });
-
   test('should get performance profile when loading page', async () => {
-
     await page.tracing.start({
       path: `tests/logs/load-trace-${new Date().getTime()}.json`,
       screenshots: true
@@ -51,12 +43,33 @@ describe('test', () => {
       path: `tests/logs/run-trace-${new Date().getTime()}.json`,
       screenshots: true
     });
-    
+
     await page.click('#a');
     await page.waitFor(1300);
     await page.tracing.stop();
   });
 
+  // test('should get animation events', async () => {
+  //   await page.goto('http://localhost:8080');
+
+  //   const client = await page.target().createCDPSession();
+  //   await client.send('Animation.enable');
+
+  //   await page.click('#a');
+    
+  //   client.on('Animation.animationCreated', () => console.log('Animation created!'));
+    
+  //   await page.waitFor(1500);
+    
+  //   const response = await client.send('Animation.getPlaybackRate');
+  //   console.log('playback rate is ' + response.playbackRate);
+    
+  //   await client.send('Animation.setPlaybackRate', {
+  //     playbackRate: response.playbackRate / 2
+  //   });
+  });
+
+  // from https://github.com/puppeteer/puppeteer/issues/3699
   // test('should open and interact with devtools', async () => {
   //   const wsEndpoint = browser.wsEndpoint();
 

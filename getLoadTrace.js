@@ -22,7 +22,7 @@ const puppeteer = require('puppeteer');
   // wait for as long as you want
   await page.waitFor(4000);
 
-  // or you can for an element to appear with:
+  // or wait for an element to appear:
   // await page.waitForSelector('some-css-selector');
 
   // stop the tracing
